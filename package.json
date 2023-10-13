@@ -1,0 +1,52 @@
+{
+  "name": "gs-vscode-modal-bindings",
+  "displayName": "gs-vscode-modal-bindings",
+  "description": "",
+  "version": "0.0.1",
+  "repository": "none",
+  "engines": {
+    "vscode": "^1.82.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "gs-vscode-modal-bindings.switchInputMode",
+        "title": "Switch Input Mode"
+      },
+      {
+        "command": "gs-vscode-modal-bindings.activateCommandMode",
+        "title": "Activate Command Mode"
+      },
+      {
+        "command": "gs-vscode-modal-bindings.activateInputMode",
+        "title": "Activate Input Mode"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "install": "npm run compile && npx vsce package && code --install-extension gs-vscode-modal-bindings-0.0.1.vsix"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.82.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "eslint": "^8.47.0",
+    "glob": "^10.3.3",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.6",
+    "@vscode/test-electron": "^2.3.4"
+  }
+}
